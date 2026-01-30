@@ -7,7 +7,7 @@ export function Resume({personalInfo,setPersonalInfo,educationInfo,setEducationI
         <div>
             <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
             <EducationInfo educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
-            <ProjectInfo projectInfo={projectInfo} />
+            <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo}/>
         </div>
     )
 }
