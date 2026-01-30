@@ -1,0 +1,23 @@
+workflow:-
+components:- resume==>diff parts ff resume
+                      personal info
+                      education
+                      projects.....
+             form==>diff forms take info to update for diff sections of resume
+                      personalInfo form
+                      education form
+                      
+                      project form
+
+
+states :- 3 separate ones to track the diff sectionsss
+
+page layout:-
+resume on whole screen
+at the top buttons for """change and new form""""
+
+change --- to edit the resume.....
+           returns form with the previous info 
+
+new ---- to make a whole new resume
+         returns a new form with previous data emptied....
