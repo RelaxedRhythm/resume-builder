@@ -4,7 +4,7 @@ import { ProjectInfo } from "./projectInfo";
 
 export function Resume({personalInfo,setPersonalInfo,educationInfo,setEducationInfo , projectInfo,setProjectInfo}){
     return(
-        <div>
+        <div className='bg-teal-400 '>
             <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
             <EducationInfo educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
             <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo}/>

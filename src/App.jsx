@@ -27,8 +27,14 @@ function App() {
   const [educationInfo, setEducationInfo] = useState(initialEducationInfo);
   const [projectInfo, setProjectInfo] = useState(initialProjectInfo);
 
+  const [formVisible,setFormVisible]=useState(false);
+
+  function showForm(){
+    setFormVisible(!formVisible);
+    console.log(formVisible);
+  }
   return (
-    <div>
+    <div >
       <Resume personalInfo={personalInfo} 
               educationInfo={educationInfo} 
               projectInfo={projectInfo}
@@ -36,12 +42,18 @@ function App() {
               setEducationInfo={setEducationInfo} 
               setProjectInfo={setProjectInfo} />
 
-      <Form personalInfo={personalInfo} 
+      <button onClick={showForm}>Form</button>
+
+      { formVisible==true &&
+        <Form personalInfo={personalInfo} 
             educationInfo={educationInfo} 
             projectInfo={projectInfo}
             setPersonalInfo={setPersonalInfo}  
             setEducationInfo={setEducationInfo} 
-            setProjectInfo={setProjectInfo} />
+            setProjectInfo={setProjectInfo} 
+            formVisible={formVisible}
+            setFormVisible={setFormVisible}/>
+      }
     </div>
   )
 
