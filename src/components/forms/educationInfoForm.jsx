@@ -1,33 +1,42 @@
 import { useState } from "react";
 
 
-export function EducationInfoForm({educationInfo,setEducationInfo}){
-    const initialInfo={
-    schoolName:"",
-    educationLevel:"",
-    cgpa:""
-  }
-    const [formInfo,setFormInfo]=useState(initialInfo)
-    function handleChange(e){
-        const {name,value} =e.target;
-        setFormInfo(prev=>({
+export function EducationInfoForm({ educationInfo, setEducationInfo }) {
+    const initialInfo = {
+        schoolName: "",
+        educationLevel: "",
+        cgpa: ""
+    }
+    const [formInfo, setFormInfo] = useState(initialInfo)
+    function handleChange(e) {
+        const { name, value } = e.target;
+        setFormInfo(prev => ({
             ...prev,
-            [name]:value
+            [name]: value
         }));
-  }
+    }
 
-  function handleSubmit(e){
-    e.preventDefault();
-    setEducationInfo(formInfo);
-  }
-    return(
+    function handleSubmit(e) {
+        e.preventDefault();
+        setEducationInfo(formInfo);
+    }
+    return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="">Degree/Class</label>
-            <input name="educationLevel" value={formInfo.educationLevel} type="text" placeholder="enter degree" onChange={handleChange} />
-            <label htmlFor="">School/College Name</label>
-            <input name="schoolName" value={formInfo.schoolName} type="text" placeholder="Enter school/college name" onChange={handleChange}/>
-            <label htmlFor="">CGPA</label>
-            <input name="cgpa" value={formInfo.cgpa} type="text" placeholder="CGPA" onChange={handleChange}/>
+            <fieldset>
+                <label htmlFor="">Degree/Class</label>
+                <input name="educationLevel" value={formInfo.educationLevel} type="text" placeholder="enter degree" onChange={handleChange} />
+            </fieldset>
+
+            <fieldset>
+                <label htmlFor="">School/College Name</label>
+                <input name="schoolName" value={formInfo.schoolName} type="text" placeholder="Enter school/college name" onChange={handleChange} />
+            </fieldset>
+
+            <fieldset>
+                <label htmlFor="">CGPA</label>
+                <input name="cgpa" value={formInfo.cgpa} type="text" placeholder="CGPA" onChange={handleChange} />
+            </fieldset>
+
             <button type="submit">Submit</button>
         </form>
     )

@@ -27,34 +27,49 @@ function App() {
   const [educationInfo, setEducationInfo] = useState(initialEducationInfo);
   const [projectInfo, setProjectInfo] = useState(initialProjectInfo);
 
-  const [formVisible,setFormVisible]=useState(false);
-
-  function showForm(){
-    setFormVisible(!formVisible);
-    console.log(formVisible);
-  }
+  const [showForm, setShowForm] = useState(false);
+  console.log(showForm);
+  // function showForm() {
+  //   setFormVisible(!formVisible);
+  //   console.log(formVisible);
+  // }
   return (
-    <div >
-      <Resume personalInfo={personalInfo} 
-              educationInfo={educationInfo} 
-              projectInfo={projectInfo}
-              setPersonalInfo={setPersonalInfo} 
-              setEducationInfo={setEducationInfo} 
-              setProjectInfo={setProjectInfo} />
 
-      <button onClick={showForm}>Form</button>
+    <div>
+      <div className="button-class" >
+        <button onClick={() => setShowForm(!showForm)}>Form</button>
+      </div>
+      <div className={`container ${showForm ? "split" : "centre"} `}>
 
-      { formVisible==true &&
-        <Form personalInfo={personalInfo} 
-            educationInfo={educationInfo} 
+
+        <div className={`resume-class ${showForm ? "shift-left" : ""}`}>
+          <Resume personalInfo={personalInfo}
+            educationInfo={educationInfo}
             projectInfo={projectInfo}
-            setPersonalInfo={setPersonalInfo}  
-            setEducationInfo={setEducationInfo} 
-            setProjectInfo={setProjectInfo} 
-            formVisible={formVisible}
-            setFormVisible={setFormVisible}/>
-      }
+            setPersonalInfo={setPersonalInfo}
+            setEducationInfo={setEducationInfo}
+            setProjectInfo={setProjectInfo} />
+        </div>
+
+
+
+
+        <div className={`form-class ${showForm ? "show" : "hide"}`}>
+          <Form personalInfo={personalInfo}
+            educationInfo={educationInfo}
+            projectInfo={projectInfo}
+            setPersonalInfo={setPersonalInfo}
+            setEducationInfo={setEducationInfo}
+            setProjectInfo={setProjectInfo}
+            formVisible={showForm}
+            setFormVisible={setShowForm} />
+        </div>
+
+
+
+      </div>
     </div>
+
   )
 
 }

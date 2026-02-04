@@ -25,17 +25,28 @@ export function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
 
     return (
         <div>
-            
-            <form onSubmit={handleSubmit}>
 
-                <label>Name</label>
-                <input type="text" name="name" value={formPersonalInfo.name} onChange={handleChange} />
-                <label>Phone Number</label>
-                <input type="tel" name="phnum" value={formPersonalInfo.phnum} onChange={handleChange} />
-                <label>LinkedIn</label>
-                <input type="text" name="linkedIn" value={formPersonalInfo.linkedIn} onChange={handleChange} />
-                <label>GitHub</label>
-                <input type="text" name="gitHub" value={formPersonalInfo.gitHub} onChange={handleChange} />
+            <form onSubmit={handleSubmit}>
+                <fieldset>
+                    <label>Name</label>
+                    <input type="text" name="name" value={formPersonalInfo.name} onChange={handleChange} />
+                </fieldset>
+
+                <fieldset>
+                    <label>Phone Number</label>
+                    <input type="tel" name="phnum" value={formPersonalInfo.phnum} onChange={handleChange} />
+                </fieldset>
+
+                <fieldset>
+                    <label>LinkedIn</label>
+                    <input type="text" name="linkedIn" value={formPersonalInfo.linkedIn} onChange={handleChange} />
+                </fieldset>
+
+                <fieldset>
+                    <label>GitHub</label>
+                    <input type="text" name="gitHub" value={formPersonalInfo.gitHub} onChange={handleChange} />
+                </fieldset>
+
                 <button type="submit">Submit</button>
 
             </form>

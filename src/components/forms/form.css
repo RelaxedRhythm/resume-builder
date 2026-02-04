@@ -1,0 +1,49 @@
+
+.form-btn{
+    /* margin: 10px; */
+    margin-top: 0px;
+    background-color: beige;
+    color: black;
+    border-right: 1px solid;
+    
+}
+.form-btn:hover {
+  background-color: rgb(237, 237, 220);
+  translate: 1px;
+  box-shadow:#1a1a1a;
+}
+div{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form-comp{
+    display: flex;
+    flex-direction: column;
+}
+label{
+    padding: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    
+}
+fieldset{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: none;
+    padding: 12px;
+}
+input{
+    height: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    color: rgb(223, 223, 223);
+    cursor: text;
+    transition: translate 0.5s;
+    font-style: italic;
+}
+input:hover{
+    translate: 3px;
+}

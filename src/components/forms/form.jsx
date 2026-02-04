@@ -2,40 +2,48 @@ import { useState } from "react";
 import { EducationInfoForm } from "./educationInfoForm";
 import { PersonalInfoForm } from "./personalInfoForm";
 import { ProjectForm } from "./projectForm";
+import './form.css';
 
+export function Form({ personalInfo, educationInfo, projectInfo, setEducationInfo, setPersonalInfo, setProjectInfo, formVisible, setFormVisible }) {
+    const sections = [
+        { id: "personal", label: "Personal" },
+        { id: "education", label: "Education" },
+        { id: "project", label: "Projects" }
+    ]
+    const form_map = {
+        personal: PersonalInfoForm,
+        education: EducationInfoForm,
+        project: ProjectForm
 
-export function Form({ personalInfo, educationInfo, projectInfo, setEducationInfo, setPersonalInfo, setProjectInfo,formVisible,setFormVisible }) {
-    const [state,setState]=useState("personal");
-    const handleFormState=(text)=>{
-        console.log(text);
-        if(text=='education') setState("education");
-        else if(text=='project') setState("project");
-        else setState("personal");
-    };
+    }
+    const [state, setState] = useState("personal");
+    const ActiveForm = form_map[state]; //storing the cuurent form to be rendered in in activeForm
 
-    function handleClose(){
-        setFormVisible(false);    
+    function handleClose() {
+        setFormVisible(false);
     }
 
-    if(!formVisible) return null;
-    
+    if (!formVisible) return null;
+
     return (
         <div>
-            <button onClick={handleClose}>Close</button>
-            <button onClick={()=>handleFormState("personal")}>Personal</button>
-            <button onClick={()=>handleFormState("education") }>Education</button>
-            <button onClick={()=>handleFormState("project") }> Projects</button>
+            <button className="form-btn" onClick={handleClose}>Close</button>
             {
-                (state=="personal" && <PersonalInfoForm personalInfo={personalInfo} setPersonalInfo={setPersonalInfo} /> )   
+                sections.map((section) => (
+
+                    <button key={section.id} onClick={() => setState(section.id)} className="form-btn">{section.label}</button>
+                ))
             }
-           
-            {
-                (state=="education" && <EducationInfoForm educationInfo={educationInfo} setEducationInfo={setEducationInfo} />)   
-            }
-            {
-                state=="project" &&  <ProjectForm projectInfo={projectInfo} setProjectInfo={setProjectInfo}/> 
-            }
-           
+            <div className="form-comp">
+                {ActiveForm && <ActiveForm personalInfo={personalInfo}
+                    setPersonalInfo={setPersonalInfo}
+                    educationInfo={educationInfo}
+                    setEducationInfo={setEducationInfo}
+                    projectInfo={projectInfo}
+                    setProjectInfo={setProjectInfo}
+                />}
+            </div>
+
         </div>
 
 

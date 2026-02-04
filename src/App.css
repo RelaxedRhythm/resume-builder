@@ -2,6 +2,55 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  /* text-align: center; */
+}
+.container{
+  display: flex; 
+  width: 100%; 
+  min-height: 100vh; 
+  margin-top: 20px;
+  gap: 20px;
+  transition: all 1s ease;
+}
+.container.centre{
+  justify-content: center;
+}
+.container.split{
+  justify-content: flex-start;
+}
+.resume-class{
+  flex: 1;
+  width: 700px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  padding: 20px;
+  background-color: antiquewhite;
+  margin-right: 10px;
+  /* width: 700px; */
+  transition: all 1s ease;
 }
 
+.button-class{
+  display: flex;
+  justify-content: center;
+  
+  width: 80px;
+}
+.form-class{
+  flex: 1;
+  width: 500px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: auto;
+  padding: 20px;
+  background-color: rgb(238, 238, 202);
+  margin-left:10px ;
+  transition: all 1s ease; 
+}
+.form-class.show{
+    animation:1s ease-in;
+}
+.form-class.hide{
+  display: none;
+}
