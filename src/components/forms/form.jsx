@@ -27,13 +27,16 @@ export function Form({ personalInfo, educationInfo, projectInfo, setEducationInf
 
     return (
         <div>
-            <button className="form-btn" onClick={handleClose}>Close</button>
-            {
+            <div className="form-btn-div">
+                {
                 sections.map((section) => (
 
                     <button key={section.id} onClick={() => setState(section.id)} className="form-btn">{section.label}</button>
                 ))
             }
+            </div>
+            
+            <button className="close-btn" onClick={handleClose}>X</button>
             <div className="form-comp">
                 {ActiveForm && <ActiveForm personalInfo={personalInfo}
                     setPersonalInfo={setPersonalInfo}

@@ -4,13 +4,44 @@
 /* .resume-container{
     width: 500px;
 } */
+
+.personalinfo,.educationinfo,.projectinfo{
+
+    line-height: 10px;
+    margin-bottom:50px ;
+}
+.personalinfo{
+    display:flex ;
+    justify-content: center;
+    height: 80px;
+}
+.personalinfo h1{
+    margin-bottom: 0px;
+    justify-self: center;
+}
+.personalinfo p{
+    margin-top: 1px;
+}
 ul{
     display: flex;
     list-style: none;
     /* padding: 20px; */
-    justify-content: center;
+    /* justify-con.tent: center; */
 }
 li{
     padding: 20px;
 }
 
+.educationinfo p{
+    font-size: 16px;
+}
+
+.project{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.project a{
+    margin-right: 13px;
+}

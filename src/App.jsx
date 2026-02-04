@@ -8,6 +8,7 @@ function App() {
   const initialPersonalInfo = {
     name: 'Rhythm',
     phnum: '7924879284',
+    email:'abc@gmail.com',
     linkedIn: 'kshfhahdp',
     gitHub: 'fgadsfgkdsf'
   }
@@ -36,8 +37,8 @@ function App() {
   return (
 
     <div>
-      <div className="button-class" >
-        <button onClick={() => setShowForm(!showForm)}>Form</button>
+      <div >
+        <button className={`form-button-class ${showForm?"left":"centre"}`} onClick={() => setShowForm(!showForm)}>Form</button>
       </div>
       <div className={`container ${showForm ? "split" : "centre"} `}>
 

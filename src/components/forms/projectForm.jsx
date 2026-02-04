@@ -51,7 +51,7 @@ export function ProjectForm({ projectInfo, setProjectInfo }) {
                 <input type="url" name="liveLink" value={formInfo.liveLink} placeholder="Enter Project link" onChange={onHandleChange} />
             </fieldset>
 
-            <button type="submit">Submit</button>
+            <button className="submit-btn" type="submit">Submit</button>
         </form>
     )
 }

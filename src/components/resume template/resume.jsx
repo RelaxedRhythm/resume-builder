@@ -5,12 +5,20 @@ import './resume.css'
 export function Resume({personalInfo,setPersonalInfo,educationInfo,setEducationInfo , projectInfo,setProjectInfo}){
     return(
         <div className="resume-container" >
-            <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
-            <hr />
-            <EducationInfo educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
-            <hr />
-            <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo}/>
-            <hr />
+
+            <div className="personalinfo">
+                <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+            </div>
+            
+            <div className="educationinfo">
+                 <EducationInfo educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
+            </div>
+           
+            <div className="projectinfo">
+                <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo}/>
+            </div>
+    
+              
         </div>
     )
 }

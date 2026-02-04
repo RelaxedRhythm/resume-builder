@@ -31,9 +31,9 @@
   transition: all 1s ease;
 }
 
-.button-class{
+.form-button-class.centre{
   display: flex;
-  justify-content: center;
+  justify-self: center;
   
   width: 80px;
 }

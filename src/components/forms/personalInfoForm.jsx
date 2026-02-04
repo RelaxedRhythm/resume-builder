@@ -5,6 +5,7 @@ export function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
     const FormPersonalInfo = {
         name: '',
         phnum: '',
+        email:'',
         linkedIn: '',
         gitHub: ''
     }
@@ -38,6 +39,11 @@ export function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
                 </fieldset>
 
                 <fieldset>
+                    <label>Email</label>
+                    <input type="email" name="email" value={formPersonalInfo.email} onChange={handleChange} />
+                </fieldset>
+
+                <fieldset>
                     <label>LinkedIn</label>
                     <input type="text" name="linkedIn" value={formPersonalInfo.linkedIn} onChange={handleChange} />
                 </fieldset>
@@ -47,7 +53,7 @@ export function PersonalInfoForm({ personalInfo, setPersonalInfo }) {
                     <input type="text" name="gitHub" value={formPersonalInfo.gitHub} onChange={handleChange} />
                 </fieldset>
 
-                <button type="submit">Submit</button>
+                <button className="submit-btn" type="submit">Submit</button>
 
             </form>
         </div>

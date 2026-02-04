@@ -37,7 +37,7 @@ export function EducationInfoForm({ educationInfo, setEducationInfo }) {
                 <input name="cgpa" value={formInfo.cgpa} type="text" placeholder="CGPA" onChange={handleChange} />
             </fieldset>
 
-            <button type="submit">Submit</button>
+            <button className="submit-btn" type="submit">Submit</button>
         </form>
     )
 }
