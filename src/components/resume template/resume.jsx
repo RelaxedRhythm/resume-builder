@@ -2,20 +2,20 @@ import { PersonalInfo } from "./personalInfo";
 import { EducationInfo } from "./educationInfo";
 import { ProjectInfo } from "./projectInfo";
 import './resume.css'
-export function Resume({personalInfo,setPersonalInfo,educationInfo,setEducationInfo , projectInfo,setProjectInfo}){
+export function Resume({resume}){
     return(
         <div className="resume-container" >
 
             <div className="personalinfo">
-                <PersonalInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+                <PersonalInfo personalInfo={resume.personalInfo}/>
             </div>
             
             <div className="educationinfo">
-                 <EducationInfo educationInfo={educationInfo} setEducationInfo={setEducationInfo} />
+                 <EducationInfo educationInfo={resume.educationInfo} />
             </div>
            
             <div className="projectinfo">
-                <ProjectInfo projectInfo={projectInfo} setProjectInfo={setProjectInfo}/>
+                <ProjectInfo projectInfo={resume.projectInfo} />
             </div>
     
               

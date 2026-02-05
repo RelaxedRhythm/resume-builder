@@ -1,22 +1,22 @@
 import { useState } from "react";
-import { EducationInfoForm } from "./educationInfoForm";
-import { PersonalInfoForm } from "./personalInfoForm";
-import { ProjectForm } from "./projectForm";
-import './form.css';
+import {Form_config} from './form-config';
+import { DynamicForm } from "./dynamicForm";
+import './form.css'
 
-export function Form({ personalInfo, educationInfo, projectInfo, setEducationInfo, setPersonalInfo, setProjectInfo, formVisible, setFormVisible }) {
+export function Form({ resume,setResume, formVisible, setFormVisible }) {
     const sections = [
-        { id: "personal", label: "Personal" },
-        { id: "education", label: "Education" },
-        { id: "project", label: "Projects" }
+        { id: "personal", label: "Personal",key:"personalInfo" },
+        { id: "education", label: "Education", key:"educationInfo" },
+        { id: "project", label: "Projects", key:"projectInfo"},
+        { id: "experiance", label: "Experiance", key:"experianceInfo"}
     ]
-    const form_map = {
-        personal: PersonalInfoForm,
-        education: EducationInfoForm,
-        project: ProjectForm
-
-    }
+    
     const [state, setState] = useState("personal");
+
+     Form_config[state];
+     const fields=Form_config[state].fields;
+
+     const activeSection=sections.find(s=>s.id===state)
     const ActiveForm = form_map[state]; //storing the cuurent form to be rendered in in activeForm
 
     function handleClose() {
@@ -38,13 +38,16 @@ export function Form({ personalInfo, educationInfo, projectInfo, setEducationInf
             
             <button className="close-btn" onClick={handleClose}>X</button>
             <div className="form-comp">
-                {ActiveForm && <ActiveForm personalInfo={personalInfo}
-                    setPersonalInfo={setPersonalInfo}
-                    educationInfo={educationInfo}
-                    setEducationInfo={setEducationInfo}
-                    projectInfo={projectInfo}
-                    setProjectInfo={setProjectInfo}
-                />}
+                <DynamicForm fields={fields}
+                data={resume[activeSection.key]}
+                onSubmit={(name,value)=>setResume(prev=>({
+                    ...prev,
+                    [activeSection.key]:{
+                        ...prev[activeSection.key],
+                    [name]:value}
+                }))}
+                
+                />
             </div>
 
         </div>

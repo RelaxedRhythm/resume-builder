@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 
-export function ProjectForm({ projectInfo, setProjectInfo }) {
+export function ProjectForm({ data,onSubmit }) {
     const initialInfo = {
         projectName: "",
         description: "",
@@ -10,7 +10,9 @@ export function ProjectForm({ projectInfo, setProjectInfo }) {
         liveLink: ""
     }
 
-    const [formInfo, setFormInfo] = useState(initialInfo);
+    const [formInfo, setFormInfo] = useState(data ?? initialInfo);
+
+    useEffect(()=>{setFormInfo(data ?? initialInfo)},[data])
 
     function onHandleChange(e) {
         const { name, value } = e.target;
@@ -22,7 +24,7 @@ export function ProjectForm({ projectInfo, setProjectInfo }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        setProjectInfo(formInfo);
+       onSubmit(formInfo);
     }
     return (
         <form onSubmit={handleSubmit}>
