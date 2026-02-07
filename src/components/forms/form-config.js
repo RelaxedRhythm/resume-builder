@@ -1,7 +1,8 @@
 
 export const Form_config = {
     personal: {
-        title: "Personal Inforamtino",
+        title: "Personal Information",
+        repeatable:false,
         fields: [
             {
                 name: "fullname", label: "Full Name", type: "text", placeholder: "Enter your name"
@@ -21,7 +22,8 @@ export const Form_config = {
         ]
     },
     education: {
-        title: "Education Inforamtino",
+        title: "Education Information",
+        repeatable:true,
         fields: [
             {
                 name: "schoolName", label: "Institute Name", type: "text", placeholder: "Enter your Institute name"
@@ -36,6 +38,7 @@ export const Form_config = {
     },
     project: {
         title: "Project Information",
+        repeatable:true,
         fields: [
             {
                 name: "projectName",label: "Project Name",type: "text", placeholder: "Enter your project name"
@@ -46,13 +49,17 @@ export const Form_config = {
             {
                 name: "gitHubLink", label: "GitHub Link", type: "url", placeholder: "Enter your github repo"
             },
+            {
+                name: "description", label: "Description", type: "textArea", placeholder: "Enter your project description"
+            },
         ]
     },
     experiance:{
         title:"Experiance Information",
+        repeatable:true,
         fields:[
             {
-                name:"jobTitle",label:"Job Title" ,type:"text",placeholder:"Enter your Job Title" 
+                 name:"jobTitle",label:"Job Title" ,type:"text",placeholder:"Enter your Job Title" 
             },
             {
                 name:"company",label:"Company Name",type:"text",placeholder:"Enter the company u work at"

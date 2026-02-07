@@ -9,8 +9,8 @@ import { Preloader } from './components/preloader/preloader'
 function App() {
   const initialResume = {
     personalInfo: {
-      name: 'Rhythm',
-      phnum: '7924879284',
+      fullname: 'Rhktgopwht',
+      phNum: '4327420397',
       email: 'abc@gmail.com',
       linkedIn: 'kshfhahdp',
       gitHub: 'fgadsfgkdsf'
@@ -20,19 +20,19 @@ function App() {
       educationLevel: "12th",
       cgpa: "9.7"
     }],
-     projectInfo:[{
+    projectInfo:[{
     projectName: "weather app",
     description: "something something something something something is better than nothing",
     date: "23-12-2005",
     gitHubLink: "dfuishfasi",
     liveLink: "djagfiugo"}]
     ,
-    experiance:[{
+    experianceInfo:[{
       jobTitle:"Front-end Developer",
       company:"XYZ pvt. ltd.",
       
     }],
-    achivements:""
+    achivements:[""]
   
   }
 

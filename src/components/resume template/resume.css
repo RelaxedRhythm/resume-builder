@@ -8,7 +8,7 @@
     transition: ease-in 1s;
 } */
 
-.personalinfo,.educationinfo,.projectinfo{
+.personalinfo,.educationinfo,.projectinfo,.experianceinfo{
 
     line-height: 10px;
     margin-bottom:50px ;
@@ -35,7 +35,7 @@ li{
     padding: 20px;
 }
 
-.educationinfo p{
+.educationinfo p ,.experianceinfo p{
     font-size: 16px;
 }
 
@@ -47,4 +47,21 @@ li{
 }
 .project a{
     margin-right: 13px;
+}
+
+.education-div,.project-div,.experiance-div{
+    margin-bottom: 25px;
+}
+
+.education-list{
+    display: flex;
+    flex-direction: column;
+    margin: -2%;
+    /* padding: 0%; */
+    line-height: -5%;
+    
+}
+.education-list li{
+    margin-bottom: -2%;
+    padding: 0%;
 }

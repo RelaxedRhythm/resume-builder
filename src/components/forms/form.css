@@ -23,11 +23,27 @@
     top: 0px;
     /* align-items: center; */
 }
-.submit-btn{
+/* .submit-btn{
     display: flex;
     justify-self: center;
     border-radius: 15px;
     margin-top: 20px;
+} */
+
+.del-btn{
+    background-color: rgb(213, 74, 74);
+}
+.add-btn{
+    background-color: rgb(66, 131, 66);
+}
+.del-btn,.add-btn{
+    width: 80px;
+    
+}
+
+.dynamic-btn-div{
+    display: flex;
+    justify-content:space-evenly;
 }
 .form-btn-div{
     display: flex;

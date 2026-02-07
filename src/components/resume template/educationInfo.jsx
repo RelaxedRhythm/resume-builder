@@ -1,14 +1,27 @@
 
 
-export function EducationInfo({educationInfo,setEducationInfo}){
-    return(
+export function EducationInfo({ educationInfo }) {
+    return (
         <div>
             <h2>Education</h2>
             <hr />
-            <h3>{educationInfo.educationLevel}</h3>            
-                <p>{educationInfo.schoolName}</p>
-           <p>CGPA: {educationInfo.cgpa}</p> 
-           
-        </div>
+            {
+                educationInfo.map((education, index) => (
+                    <div className="education-div">
+                        <ul className="education-list">
+                            <li><h3>{education.educationLevel}</h3></li>
+                            <li><p>{education.schoolName}</p></li>
+                            <li><p>CGPA: {education.cgpa}</p></li>
+                        </ul>
+                        
+                        
+                        
+                    </div>
+                ))
+            }
+
+
+
+        </div >
     )
 }

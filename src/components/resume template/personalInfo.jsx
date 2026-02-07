@@ -1,12 +1,12 @@
 
 //name email number linkedIn(link) github(link) 
-export function PersonalInfo({ personalInfo, setPersonalInfo }) {
+export function PersonalInfo({ personalInfo}) {
 
     return (
         <div >
-            <h1>{personalInfo.name}</h1>
+            <h1>{personalInfo.fullname}</h1>
             <ul>
-                <li><p>{personalInfo.phnum}</p></li>
+                <li><p>{personalInfo.phNum}</p></li>
                 <li><a href={`${personalInfo.email}`}>
                     {personalInfo.email}</a></li>
                 <li><a href={`${personalInfo.linkedIn}`}>LinkedIn</a></li>

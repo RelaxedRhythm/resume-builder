@@ -1,19 +1,30 @@
 
 
-export function ProjectInfo({ projectInfo, setProjectInfo }) {
+export function ProjectInfo({ projectInfo }) {
     return (
         <div className="projectinfo">
             <h2>Projects</h2>
             <hr />
             <div className="project">
-                <h3>{projectInfo.projectName}</h3>
                 <div>
-                    <a href={`${projectInfo.liveLink}`}>Live</a>
-                    <a href={`${projectInfo.gitHub}`}>GitHub</a>
+                     {
+                    projectInfo.map((project, index) => (
+                        <div className="project-div" key={index}>
+                            <h3>{project.projectName}</h3>
+                            <div>
+                                <a href={`${project.liveLink}`}>Live</a>
+                                <a href={`${project.gitHub}`}>GitHub</a>
+                            </div>
+                             <p>{project.description}</p>
+                        </div>
+                    ))
+                }
                 </div>
 
+               
+
             </div>
-            <p>{projectInfo.description}</p>
+           
         </div>
     )
 }
